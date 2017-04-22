@@ -22,6 +22,7 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -32,6 +33,7 @@ Partial Class frmMain
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -56,7 +58,7 @@ Partial Class frmMain
         'ExintToolStripMenuItem
         '
         Me.ExintToolStripMenuItem.Name = "ExintToolStripMenuItem"
-        Me.ExintToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExintToolStripMenuItem.Size = New System.Drawing.Size(92, 22)
         Me.ExintToolStripMenuItem.Text = "Exit"
         '
         'HelpToolStripMenuItem
@@ -69,14 +71,14 @@ Partial Class frmMain
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'btnLogin
         '
         Me.btnLogin.Enabled = False
         Me.btnLogin.Location = New System.Drawing.Point(25, 170)
-        Me.btnLogin.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(87, 29)
         Me.btnLogin.TabIndex = 1
@@ -87,7 +89,7 @@ Partial Class frmMain
         '
         Me.btnRegister.Enabled = False
         Me.btnRegister.Location = New System.Drawing.Point(123, 170)
-        Me.btnRegister.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnRegister.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(87, 29)
         Me.btnRegister.TabIndex = 2
@@ -97,10 +99,11 @@ Partial Class frmMain
         'txtID
         '
         Me.txtID.Location = New System.Drawing.Point(25, 126)
-        Me.txtID.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(2)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(186, 20)
         Me.txtID.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.txtID, "NOTE: Need at least four letters and four numbers!")
         '
         'Label1
         '
@@ -139,7 +142,7 @@ Partial Class frmMain
         Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
         Me.Name = "frmMain"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
@@ -162,4 +165,5 @@ Partial Class frmMain
     Friend WithEvents txtID As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

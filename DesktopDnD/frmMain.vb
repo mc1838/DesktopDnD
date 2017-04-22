@@ -1,10 +1,24 @@
 ﻿Public Class frmMain
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-
+        Dim re As New Text.RegularExpressions.Regex("\d") 'check that it has a digit
+        If Not re.IsMatch(txtID.Text) Then
+            MsgBox("Must have at least one digit!")
+        Else
+            frmReport.ShowDialog()
+            Me.Hide()
+        End If
     End Sub
 
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-
+        Dim re As New Text.RegularExpressions.Regex("\d") 'check that it has a digit
+        If Not re.IsMatch(txtID.Text) Then
+            MsgBox("Must have at least one digit!")
+        Else
+            MessageBox.Show("New ID Registered!", "ID Registered",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information)
+            frmReport.ShowDialog()
+            Me.Hide()
+        End If
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
