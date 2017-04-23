@@ -4,8 +4,9 @@
         If Not re.IsMatch(txtID.Text) Then
             MsgBox("Must have at least one digit!")
         Else
-            frmReport.ShowDialog()
             Me.Hide()
+            frmReport.ShowDialog()
+
         End If
     End Sub
 
@@ -16,8 +17,9 @@
         Else
             MessageBox.Show("New ID Registered!", "ID Registered",
                         MessageBoxButtons.OK, MessageBoxIcon.Information)
-            frmReport.ShowDialog()
             Me.Hide()
+            frmReport.ShowDialog()
+
         End If
     End Sub
 

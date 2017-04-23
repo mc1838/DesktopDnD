@@ -16,13 +16,20 @@
         'Database connection here...
         'Dim table As DataTable = modConnect.SQLSelect("SELECT * FROM [dbo].[TestTable]")
         'Dim rows As DataRowCollection = DataTable.Rows
-        Dim ds As DataSet = modConnect.SQLSelect("SELECT * FROM [dbo].[TestTable]")
-        If ds.Tables(0).Rows.Count > 0 Then
-            'txtReport.Text = ds.Tables(0).Rows(0)("Details").ToString
-            txtReport.Text = ds.Tables(0).Rows(0).ToString
-            'txtReport.Text = ds.Tables(0).Rows(0).ToString
-        End If
+        'Dim ds As DataSet = modConnect.SQLSelect("SELECT * FROM [dbo].[TestTable]")
+        Dim ds2 As DataSet = modConnect.SQLSelect("SELECT * FROM [dbo].[PlayerTest]")
 
+        If ds2.Tables(0).Rows.Count > 0 Then
+            txtReport.Clear()
+            For rows As Integer = 0 To (ds2.Tables(0).Rows.Count - 1)
+                For cols As Integer = 1 To (ds2.Tables(0).Columns.Count - 1)
+                    Dim colname As String = ds2.Tables(0).Columns(cols).ColumnName
+                    txtReport.AppendText(ds2.Tables(0).Rows(rows)(colname).ToString + vbTab)
+                    'txtReport.Text = ds.Tables(0).Rows(rows)(colname).ToString
+                Next
+                txtReport.AppendText(vbCrLf)
+            Next
+        End If
 
     End Sub
 
